@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="contact1.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script type="text/javascript">
+        
+	        $(document).ready(function () 
+	        {
+	            $('#submit').click(function() 
+	            {
+	                var firstname = $('#name').val();
+	                var email = $('#email').val();
+	                var comment = $('#comment').val();
+	                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+	                var namereg = /^[a-zA-Z ]{2,30}$/;
+	            
+	                if(name == '' || name == null || email == '' || email == null || comment == '' || comment == null)
+	                {
+	                    alert("All Fields are mandatory");
+	                    return false;
+	                }                
+	                else if(!name.match(namereg)){
+	                    alert("Enter a valid name");                    
+	                }
+	                else if(!email.match(emailReg)) 
+	                {
+	                    alert("Enter a valid Email Address")
+	                }                
+	            })
+	        }) 
+			</script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <label>UPPER</label>
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a>First Gallery</a></li>
+                    <li><a>Second</a></li>
+                    <li><a>Third Grid</a></li>
+                    <li><a>About us</a></li>
+                    <li><a>Contact</a></li>
+                    <li><div id="clock">00:00:00</div></li>		
+                </ul>
+
+            </nav>
+           </header>
+
+        <section>
+            <div><h2>Contact Us</h2><p>Praesent tempus dapibus odio nec elementum.Sed elementum est quis tortor faucibus,et molestile nibh finibus.Mauris condimentum ex vestibulum fringilla consectetur</p>
+           
+            <form id="inputform">
+                <div id="div_error"></div>
+                <input type="text" id="name" placeholder="Name" style="margin-top: 5px; margin-bottom: 5px; box-sizing: border-box; width: 100%; height: 7%;"><br/>
+                <div class="email">
+                <input type="text" id="email" placeholder="Email"  style="margin-top: 5px; margin-bottom: 5px; box-sizing: border-box; width: 100%; height: 7%;"><br/>
+                </div>
+                <textarea placeholder="Your Message" id="comment"  style="width: 100%; height: 30%;"></textarea>
+                
+                <input type="submit" id="submit" value="Submit" style="color:white; background-color: #2e76db; border:0; letter-spacing:1px; margin-left: 82%; margin-top: 10px; font-size: 17px;">
+            </form>
+
+            </div>
+            <div> <h2>123 New Street 11000, San Francisco, CA</h2>
+				<img class="image" src="img1.jpg" style="width: 400px; height: 300px;" />
+		   </div>
+        </section>
+        <footer>
+             <img src= "fb.jpg">
+            <img src= "twitter.jpg">
+            <img src= "gplus.jpg">
+            <img src= "li.jpg">
+        </footer>
+        <div class="footer"><h2>Copyright &copy 2021 Your Company - design Template</h2></div>
+    </body>
+    <script>
+		    setInterval(showTime, 1000);
+
+		    function showTime() {
+		        let time = new Date();
+		        let hh = time.getHours();
+		        let mm = time.getMinutes();
+		        let ss = time.getSeconds();          
+		        let currentTime = hh + ":" 
+		        + mm + ":" + ss;
+		        document.getElementById("clock").innerHTML = currentTime;
+		    }		    
+		    showTime();
+    	</script>
+</html>
