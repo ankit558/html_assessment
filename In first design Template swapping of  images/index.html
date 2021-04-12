@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Template</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+        <script type="text/javascript">
+     //swapping images 1&2
+        	function swap()
+        	{
+        		var image1,image2;
+        		image1=document.getElementById('img1').src;
+        		image2=document.getElementById('img2').src;
+        		document.getElementById('img2').src=image1;
+        		document.getElementById('img1').src=image2;
+         	}
+    //swapping images 1to4 and 2to3
+         	function swapImage()
+         	{
+         		var image1,image2,image3,image4;
+         		image1=document.getElementById('img1').src;
+         		image4=document.getElementById('img4').src;
+         		image2=document.getElementById('img2').src;
+         		image3=document.getElementById('img3').src;
+         		document.getElementById('img4').src=image1;
+         		document.getElementById('img1').src=image4;
+         		document.getElementById('img2').src=image3;
+         		document.getElementById('img3').src=image2;
+         	}
+
+        </script>
+</head>
+
+<body>
+
+<header> 
+ <nav>
+ 	<label class="logo">UPPER</label>
+ 	<ul>
+ 		<li><a>Home</a></li>
+ 		<li><a>First Gallery</a></li>
+ 		<li><a>Second</a></li>
+ 		<li><a>Third Grid</a></li>
+ 		<li><a>About us</a></li>
+ 		<li><a>Contact</a></li>
+	 	<li><div id="clock">00:00:00</div>
+    	</li>
+ 	</ul>
+ </nav>
+</header>
+	
+	<h3>First Image Gallery</h3>
+	<p>Curabitur quis tellus sed orci rhoncus fer mentum. Praesent sollicitudin scelerisque nunc<br/> et vehicula. Sed ex magna, elementum ut volutpat ut, vehicula quis metus</p><br/>
+
+<content>
+	<div class="img-area">
+
+            <div class="single-img"><img id="img1" onclick="swap()" src="fleximg1.jpg">
+            <div id="text">Image One</div> 
+            </div>
+            
+            <div class="single-img"><img id="img2" onclick="swapImage()" src="fleximg2.jpg">
+            <div id="text"> Image Two</h1>
+            </div>
+            </div>
+
+            <div class="single-img"><img id="img3" src="fleximg3.jpg">
+            <div id="text"> Image Third</h1>
+            </div>
+            </div>
+           
+            <div class="single-img"><img id="img4" src="fleximg4.jpg">
+            <div id="text"> Image Four</h1>
+            </div>
+            </div>
+    </div>
+
+<footer class="footer">
+  <h2>Copyright &copy 2021 Your Company - design Template</h2>
+</footer>
+</body>
+<script type="text/javascript">
+
+    setInterval(showTime, 1000);
+
+    function showTime() {
+        let time = new Date();
+        let hh = time.getHours();
+        let mm = time.getMinutes();
+        let ss = time.getSeconds();          
+        let currentTime = hh + ":" 
+        + mm + ":" + ss;
+        document.getElementById("clock").innerHTML = currentTime;
+    }
+    
+    showTime();
+</script>
+</html>
