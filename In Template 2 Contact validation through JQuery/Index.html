@@ -8,21 +8,21 @@
 	        {
 	            $('#submit').click(function() 
 	            {
-	                var firstname = $('#name').val();
+	                var name = $('#name').val();
 	                var email = $('#email').val();
 	                var comment = $('#comment').val();
-	                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-	                var namereg = /^[a-zA-Z ]{2,30}$/;
+	                var emailRegister = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+	                var nameregister = /^[a-zA-Z ]{2,30}$/;
 	            
 	                if(name == '' || name == null || email == '' || email == null || comment == '' || comment == null)
 	                {
 	                    alert("All Fields are mandatory");
 	                    return false;
 	                }                
-	                else if(!name.match(namereg)){
+	                else if(!name.match(nameregister)){
 	                    alert("Enter a valid name");                    
 	                }
-	                else if(!email.match(emailReg)) 
+	                else if(!email.match(emailRegister)) 
 	                {
 	                    alert("Enter a valid Email Address")
 	                }                
